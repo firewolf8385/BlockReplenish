@@ -1,0 +1,8 @@
+name: Replenish
+version: '${project.version}'
+main: net.jadedmc.replenish.Replenish
+api-version: 1.19
+depend: [WorldGuard]
+authors: [JadedMC]
+description: Allow blocks broken in a WorldGuard region to regenerate over time
+website: https://www.jadedmc.net
