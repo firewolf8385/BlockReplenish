@@ -6,3 +6,9 @@ depend: [WorldGuard]
 authors: [JadedMC]
 description: Allow blocks broken in a WorldGuard region to regenerate over time
 website: https://www.jadedmc.net
+
+commands:
+  replenish:
+    description: Main plugin command
+    usage: /<command>
+    permission: replenish.admin
