@@ -5,13 +5,16 @@ Regions:
     blocks:
       COAL_ORE:
         delay: 60
-        replacements:
-          STONE: 100
+        replacement: STONE
+        regeneration:
+          COAL_ORE: 100
       STONE:
         delay: 60
-        replacements:
-          COBBLESTONE: 100
+        replacement: COBBLESTONE
+        regeneration:
+          STONE: 100
       COBBLESTONE:
         delay: 60
-        replacements:
-          BEDROCK: 100
+        replacement: BEDROCK
+        regeneration:
+          COBBLESTONE: 100
