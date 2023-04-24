@@ -30,7 +30,6 @@ public class RegionManager {
     public RegionManager(Replenish plugin) {
         this.plugin = plugin;
         loadRegions();
-        System.out.println("Total Regions: " + regions.size());
     }
 
     /**
