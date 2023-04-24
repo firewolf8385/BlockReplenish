@@ -3,19 +3,37 @@ package net.jadedmc.replenish.listeners;
 import net.jadedmc.replenish.Replenish;
 import net.jadedmc.replenish.regions.Region;
 import net.jadedmc.replenish.regions.RegionBlock;
+import org.bukkit.GameMode;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
+/**
+ * This listens to the BlockBreakEvent event, which is called every time a player breaks a block.
+ * We use this to process blocks broken in configured regions.
+ */
 public class BlockBreakListener implements Listener {
     private final Replenish plugin;
 
+    /**
+     * To be able to access the configuration files, we need to pass an instance of the plugin to our listener.
+     * @param plugin Instance of the plugin.
+     */
     public BlockBreakListener(Replenish plugin) {
         this.plugin = plugin;
     }
 
+    /**
+     * Runs when the event is called.
+     * @param event PortalEnterEvent.
+     */
     @EventHandler
     public void onBreak(BlockBreakEvent event) {
+        // Exit if the player is in creative mode.
+        if(event.getPlayer().getGameMode() == GameMode.CREATIVE) {
+            return;
+        }
+
         // Get the region the broken block is in.
         Region region = plugin.getRegionManager().getFromLocation(event.getBlock().getLocation());
 
