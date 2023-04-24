@@ -1,0 +1,17 @@
+Regions:
+  coal_mine:
+    settings:
+      PreventBuilding: true
+    blocks:
+      COAL_ORE:
+        delay: 60
+        replacements:
+          STONE: 100
+      STONE:
+        delay: 60
+        replacements:
+          COBBLESTONE: 100
+      COBBLESTONE:
+        delay: 60
+        replacements:
+          BEDROCK: 100
