@@ -2,6 +2,7 @@ package net.jadedmc.replenish;
 
 import net.jadedmc.replenish.commands.ReplenishCMD;
 import net.jadedmc.replenish.listeners.BlockBreakListener;
+import net.jadedmc.replenish.listeners.BlockPlaceListener;
 import net.jadedmc.replenish.regions.RegionManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -18,6 +19,7 @@ public final class Replenish extends JavaPlugin {
         getCommand("replenish").setExecutor(new ReplenishCMD(this));
 
         getServer().getPluginManager().registerEvents(new BlockBreakListener(this), this);
+        getServer().getPluginManager().registerEvents(new BlockPlaceListener(this), this);
     }
 
     /**

@@ -13,6 +13,7 @@ import java.util.Collection;
 public class Region {
     private final String id;
     private final Collection<RegionBlock> blocks = new ArrayList<>();
+    private final boolean preventBuilding;
 
     /**
      * Create the Region object.
@@ -21,6 +22,8 @@ public class Region {
      */
     public Region(Replenish plugin, String id) {
         this.id = id;
+
+        preventBuilding = plugin.getSettingsManager().getConfig().getBoolean("Regions." + id + ".settings.PreventBuilding");
 
         ConfigurationSection section = plugin.getSettingsManager().getConfig().getConfigurationSection("Regions." + id + ".blocks");
 
@@ -66,5 +69,13 @@ public class Region {
      */
     public String getId() {
         return id;
+    }
+
+    /**
+     * Get if the plugin should stop players from building in a region.
+     * @return If the plugin should cancel the build event.
+     */
+    public boolean shouldPreventBuilding() {
+        return preventBuilding;
     }
 }
