@@ -4,9 +4,15 @@ import net.jadedmc.replenish.Replenish;
 import net.jadedmc.replenish.regions.Region;
 import net.jadedmc.replenish.regions.RegionBlock;
 import org.bukkit.GameMode;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.block.BlockFace;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+
+import java.util.Arrays;
+import java.util.Collection;
 
 /**
  * This listens to the BlockBreakEvent event, which is called every time a player breaks a block.
@@ -66,5 +72,12 @@ public class BlockBreakListener implements Listener {
                 }, (long) (regionBlock.getDelay()*20.0));
             }
         }, 1);
+
+        // Process stacked crops, like bamboo, cactus, and sugar cane.
+        Collection<Material> crops = Arrays.asList(Material.BAMBOO, Material.CACTUS, Material.SUGAR_CANE);
+        Block above = event.getBlock().getRelative(BlockFace.UP);
+        if(crops.contains(event.getBlock().getType()) && crops.contains(above.getType())) {
+            event.getPlayer().breakBlock(above);
+        }
     }
 }
