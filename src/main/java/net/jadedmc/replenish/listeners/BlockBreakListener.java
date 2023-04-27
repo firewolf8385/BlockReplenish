@@ -53,6 +53,12 @@ public class BlockBreakListener implements Listener {
 
         // Exit if the block is not configured.
         if(regionBlock == null) {
+
+            // Prevent breaking non-configured blocks if prevent building is set to true.
+            if(region.shouldPreventBuilding()) {
+               event.setCancelled(true);
+            }
+
             return;
         }
 
