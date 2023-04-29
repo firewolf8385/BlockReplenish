@@ -8,7 +8,8 @@ description: Allow blocks broken in a WorldGuard region to regenerate over time
 website: https://www.jadedmc.net
 
 commands:
-  replenish:
+  rpgmines:
     description: Main plugin command
     usage: /<command>
-    permission: replenish.admin
+    permission: rpgmines.admin
+    aliases: [mines, rpgm]

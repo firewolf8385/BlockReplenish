@@ -1,6 +1,6 @@
-package net.jadedmc.replenish.regions;
+package net.jadedmc.rpgmines.regions;
 
-import net.jadedmc.replenish.Replenish;
+import net.jadedmc.rpgmines.RPGMines;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.ConfigurationSection;
 
@@ -20,7 +20,7 @@ public class Region {
      * @param plugin Instance of the plugin.
      * @param id Id of the region.
      */
-    public Region(Replenish plugin, String id) {
+    public Region(RPGMines plugin, String id) {
         this.id = id;
 
         preventBuilding = plugin.getSettingsManager().getConfig().getBoolean("Regions." + id + ".settings.PreventBuilding");

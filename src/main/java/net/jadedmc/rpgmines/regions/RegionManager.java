@@ -1,11 +1,11 @@
-package net.jadedmc.replenish.regions;
+package net.jadedmc.rpgmines.regions;
 
 import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 import com.sk89q.worldguard.protection.regions.RegionContainer;
-import net.jadedmc.replenish.Replenish;
+import net.jadedmc.rpgmines.RPGMines;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.ConfigurationSection;
@@ -19,7 +19,7 @@ import java.util.Map;
  * This class manages all configured regions.
  */
 public class RegionManager {
-    private final Replenish plugin;
+    private final RPGMines plugin;
     private final Map<String, Region> regions = new HashMap<>();
     private final Collection<Block> replacements = new ArrayList<>();
 
@@ -27,7 +27,7 @@ public class RegionManager {
      * Creates the RegionManager.
      * @param plugin Instance of the plugin.
      */
-    public RegionManager(Replenish plugin) {
+    public RegionManager(RPGMines plugin) {
         this.plugin = plugin;
         loadRegions();
     }

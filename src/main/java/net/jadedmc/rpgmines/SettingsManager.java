@@ -1,4 +1,4 @@
-package net.jadedmc.replenish;
+package net.jadedmc.rpgmines;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;

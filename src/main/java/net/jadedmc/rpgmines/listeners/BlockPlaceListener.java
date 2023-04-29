@@ -1,7 +1,7 @@
-package net.jadedmc.replenish.listeners;
+package net.jadedmc.rpgmines.listeners;
 
-import net.jadedmc.replenish.Replenish;
-import net.jadedmc.replenish.regions.Region;
+import net.jadedmc.rpgmines.RPGMines;
+import net.jadedmc.rpgmines.regions.Region;
 import org.bukkit.GameMode;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,13 +12,13 @@ import org.bukkit.event.block.BlockPlaceEvent;
  * We use this to prevent building in configured regions.
  */
 public class BlockPlaceListener implements Listener {
-    private final Replenish plugin;
+    private final RPGMines plugin;
 
     /**
      * To be able to access the configuration files, we need to pass an instance of the plugin to our listener.
      * @param plugin Instance of the plugin.
      */
-    public BlockPlaceListener(Replenish plugin) {
+    public BlockPlaceListener(RPGMines plugin) {
         this.plugin = plugin;
     }
 

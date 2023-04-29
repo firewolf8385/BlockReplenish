@@ -1,8 +1,8 @@
-package net.jadedmc.replenish.listeners;
+package net.jadedmc.rpgmines.listeners;
 
-import net.jadedmc.replenish.Replenish;
-import net.jadedmc.replenish.regions.Region;
-import net.jadedmc.replenish.regions.RegionBlock;
+import net.jadedmc.rpgmines.RPGMines;
+import net.jadedmc.rpgmines.regions.Region;
+import net.jadedmc.rpgmines.regions.RegionBlock;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -19,13 +19,13 @@ import java.util.Collection;
  * We use this to process blocks broken in configured regions.
  */
 public class BlockBreakListener implements Listener {
-    private final Replenish plugin;
+    private final RPGMines plugin;
 
     /**
      * To be able to access the configuration files, we need to pass an instance of the plugin to our listener.
      * @param plugin Instance of the plugin.
      */
-    public BlockBreakListener(Replenish plugin) {
+    public BlockBreakListener(RPGMines plugin) {
         this.plugin = plugin;
     }
 

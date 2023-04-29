@@ -1,4 +1,4 @@
-package net.jadedmc.replenish.utils;
+package net.jadedmc.rpgmines.utils;
 
 import java.util.ArrayList;
 import java.util.List;

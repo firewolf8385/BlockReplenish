@@ -1,4 +1,4 @@
-package net.jadedmc.replenish.utils;
+package net.jadedmc.rpgmines.utils;
 
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;

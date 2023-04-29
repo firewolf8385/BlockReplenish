@@ -1,12 +1,12 @@
-package net.jadedmc.replenish;
+package net.jadedmc.rpgmines;
 
-import net.jadedmc.replenish.commands.ReplenishCMD;
-import net.jadedmc.replenish.listeners.BlockBreakListener;
-import net.jadedmc.replenish.listeners.BlockPlaceListener;
-import net.jadedmc.replenish.regions.RegionManager;
+import net.jadedmc.rpgmines.commands.RPGMinesCMD;
+import net.jadedmc.rpgmines.listeners.BlockBreakListener;
+import net.jadedmc.rpgmines.listeners.BlockPlaceListener;
+import net.jadedmc.rpgmines.regions.RegionManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class Replenish extends JavaPlugin {
+public final class RPGMines extends JavaPlugin {
     private RegionManager regionManager;
     private SettingsManager settingsManager;
 
@@ -16,7 +16,7 @@ public final class Replenish extends JavaPlugin {
         settingsManager = new SettingsManager(this);
         regionManager = new RegionManager(this);
 
-        getCommand("replenish").setExecutor(new ReplenishCMD(this));
+        getCommand("rpgmines").setExecutor(new RPGMinesCMD(this));
 
         getServer().getPluginManager().registerEvents(new BlockBreakListener(this), this);
         getServer().getPluginManager().registerEvents(new BlockPlaceListener(this), this);

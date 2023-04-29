@@ -1,7 +1,7 @@
-package net.jadedmc.replenish.commands;
+package net.jadedmc.rpgmines.commands;
 
-import net.jadedmc.replenish.Replenish;
-import net.jadedmc.replenish.utils.ChatUtils;
+import net.jadedmc.rpgmines.RPGMines;
+import net.jadedmc.rpgmines.utils.ChatUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -12,14 +12,14 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class ReplenishCMD implements CommandExecutor, TabCompleter {
-    private final Replenish plugin;
+public class RPGMinesCMD implements CommandExecutor, TabCompleter {
+    private final RPGMines plugin;
 
     /**
      * To be able to access the configuration files, we need to pass an instance of the plugin to our listener.
      * @param plugin Instance of the plugin.
      */
-    public ReplenishCMD(Replenish plugin) {
+    public RPGMinesCMD(RPGMines plugin) {
         this.plugin = plugin;
     }
 
@@ -48,19 +48,19 @@ public class ReplenishCMD implements CommandExecutor, TabCompleter {
             case "reload":
                 plugin.getSettingsManager().reload();
                 plugin.getRegionManager().loadRegions();
-                ChatUtils.chat(sender, "&a&lReplenish &8» &aConfiguration file reloaded successfully!");
+                ChatUtils.chat(sender, "&a&lRPGMines &8» &aConfiguration file reloaded successfully!");
                 return true;
 
             // Displays the plugin version.
             case "version":
-                ChatUtils.chat(sender, "&a&lReplenish &8» &aCurrent version: &f" + plugin.getDescription().getVersion());
+                ChatUtils.chat(sender, "&a&lRPGMines &8» &aCurrent version: &f" + plugin.getDescription().getVersion());
                 return true;
 
             // Displays the help menu.
             default:
-                ChatUtils.chat(sender, "&a&lReplenish Commands");
-                ChatUtils.chat(sender, "&a/replenish reload &8» &fReloads the configuration file.");
-                ChatUtils.chat(sender, "&a/replenish version &8» &fDisplays the plugin version.");
+                ChatUtils.chat(sender, "&a&lRPGMines Commands");
+                ChatUtils.chat(sender, "&a/mines reload &8» &fReloads the configuration file.");
+                ChatUtils.chat(sender, "&a/mines version &8» &fDisplays the plugin version.");
                 return true;
         }
     }

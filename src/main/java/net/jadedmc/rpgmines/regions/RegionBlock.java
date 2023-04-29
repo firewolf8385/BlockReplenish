@@ -1,7 +1,7 @@
-package net.jadedmc.replenish.regions;
+package net.jadedmc.rpgmines.regions;
 
-import net.jadedmc.replenish.Replenish;
-import net.jadedmc.replenish.utils.WeightedRandom;
+import net.jadedmc.rpgmines.RPGMines;
+import net.jadedmc.rpgmines.utils.WeightedRandom;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 
@@ -24,7 +24,7 @@ public class RegionBlock {
      * @param region Region the RegionBlock belongs to.
      * @param material Material of the RegionBlock.
      */
-    public RegionBlock(Replenish plugin, Region region, String material) {
+    public RegionBlock(RPGMines plugin, Region region, String material) {
         System.out.println(material);
         this.material = Material.valueOf(material);
         this.delay = plugin.getSettingsManager().getConfig().getInt("Regions." + region.getId() + ".blocks." + material + ".delay");
