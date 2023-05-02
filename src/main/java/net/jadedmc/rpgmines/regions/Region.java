@@ -14,6 +14,7 @@ public class Region {
     private final String id;
     private final Collection<RegionBlock> blocks = new ArrayList<>();
     private final boolean preventBuilding;
+    private final boolean disableVanillaDrops;
 
     /**
      * Create the Region object.
@@ -24,6 +25,13 @@ public class Region {
         this.id = id;
 
         preventBuilding = plugin.getSettingsManager().getConfig().getBoolean("Regions." + id + ".settings.PreventBuilding");
+
+        if(plugin.getSettingsManager().getConfig().isSet("Regions." + id + ".settings.DisableVanillaDrops")) {
+            disableVanillaDrops = plugin.getSettingsManager().getConfig().getBoolean("Regions." + id + ".settings.DisableVanillaDrops");
+        }
+        else {
+            disableVanillaDrops = false;
+        }
 
         ConfigurationSection section = plugin.getSettingsManager().getConfig().getConfigurationSection("Regions." + id + ".blocks");
 
@@ -69,6 +77,14 @@ public class Region {
      */
     public String getId() {
         return id;
+    }
+
+    /**
+     * Get if the plugin should disable vanilla block drops.
+     * @return If the plugin should cancel block drops.
+     */
+    public boolean shouldDisableVanillaDrops() {
+        return disableVanillaDrops;
     }
 
     /**

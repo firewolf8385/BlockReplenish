@@ -85,5 +85,10 @@ public class BlockBreakListener implements Listener {
         if(crops.contains(event.getBlock().getType()) && crops.contains(above.getType())) {
             event.getPlayer().breakBlock(above);
         }
+
+        // Disable vanilla block drops if configured to.
+        if(region.shouldDisableVanillaDrops()) {
+            event.setDropItems(false);
+        }
     }
 }

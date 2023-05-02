@@ -2,6 +2,7 @@ Regions:
   coal_mine:
     settings:
       PreventBuilding: true
+      DisableVanillaDrops: false
     blocks:
       COAL_ORE:
         delay: 60
